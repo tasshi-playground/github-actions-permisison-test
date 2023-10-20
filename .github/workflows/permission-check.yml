@@ -14,7 +14,7 @@ jobs:
     outputs:
       release_tag: ${{ steps.release_tag.outputs.release_tag }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - id: release_tag
         run: |
           release_tag="v-${GITHUB_SHA}"
@@ -43,7 +43,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: echo "hoge" > attachment.txt
       - name: Upload executables
         env:
